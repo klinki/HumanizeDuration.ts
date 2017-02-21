@@ -6,18 +6,18 @@ describe('HumanizeDuration', () => {
 
 
   it('humanizes English when passed no arguments', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         expect(service.humanize(1000)).toBe('1 second');
     });
 
     it('humanizes English when passed an empty object', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({});
         expect(service.humanize(1000)).toBe('1 second');
     });
 
     it('can change the delimiter', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ delimiter: '+' });
         expect(service.humanize(0)).toBe('0 seconds');
         expect(service.humanize(1000)).toBe('1 second');
@@ -25,7 +25,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can change the spacer', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ spacer: ' whole ' });
         expect(service.humanize(0)).toBe('0 whole seconds');
         expect(service.humanize(1000)).toBe('1 whole second');
@@ -33,7 +33,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can use a conjunction', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ conjunction: ' and ' });
         expect(service.humanize(0)).toBe('0 seconds');
         expect(service.humanize(1000)).toBe('1 second');
@@ -42,7 +42,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can use a conjunction without a serial comma', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
 
         service.setOptions({
             conjunction: ' & ',
@@ -55,7 +55,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can change the units', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ units: ['d'] });
 
         expect(service.humanize(0)).toBe('0 days');
@@ -64,7 +64,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can overwrite the unit measures in the initializer', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({
             unitMeasures: {
                 y: 10512000000,
@@ -85,7 +85,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can change the decimal', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({
             units: ['s'],
             decimal: 'what'
@@ -98,7 +98,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can do simple rounding', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ round: true });
 
         expect(service.humanize(0)).toBe('0 seconds');
@@ -113,7 +113,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can do rounding with the "units" option', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ round: true });
 
         expect(service.humanize(86364000, { units: ['y', 'mo', 'w', 'd', 'h'] })).toBe('1 day');
@@ -124,7 +124,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can do rounding with the "largest" option', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ round: true });
 
         expect(service.humanize(3692131200000, { largest: 1 })).toBe('117 years');
@@ -134,7 +134,7 @@ describe('HumanizeDuration', () => {
     });
 
     it('can ask for the largest units', () => {
-        let service = new HumanizeDuration(new HumanizeDurationLanguage());
+        let service = new HumanizeDuration();
         service.setOptions({ largest: 2 });
 
         expect(service.humanize(0)).toBe('0 seconds');
@@ -148,7 +148,7 @@ describe('HumanizeDuration', () => {
 
     it('should work for czech language',
         () => {
-            let service = new HumanizeDuration(new HumanizeDurationLanguage());
+            let service = new HumanizeDuration();
             service.setOptions({
                 language: 'cs'
             });
@@ -157,7 +157,7 @@ describe('HumanizeDuration', () => {
 
     it('should work for overwrite language',
         () => {
-            let service = new HumanizeDuration(new HumanizeDurationLanguage());
+            let service = new HumanizeDuration();
             service.setOptions({
                 language: 'shortEn',
                 languages: {
