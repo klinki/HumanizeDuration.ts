@@ -3,72 +3,6 @@ import {ILanguage, ILanguageItem} from './humanize-duration.interface';
 export class HumanizeDurationLanguage {
 
     languages: ILanguageItem = {
-        ar: {
-            y: (c: any) => { return c === 1 ? 'سنة' : 'سنوات'; },
-            mo: (c: any) => { return c === 1 ? 'شهر' : 'أشهر'; },
-            w: (c: any) => { return c === 1 ? 'أسبوع' : 'أسابيع'; },
-            d: (c: any) => { return c === 1 ? 'يوم' : 'أيام'; },
-            h: (c: any) => { return c === 1 ? 'ساعة' : 'ساعات'; },
-            m: (c: any) => { return c === 1 ? 'دقيقة' : 'دقائق'; },
-            s: (c: any) => { return c === 1 ? 'ثانية' : 'ثواني'; },
-            ms: (c: any) => { return c === 1 ? 'جزء من الثانية' : 'أجزاء من الثانية'; },
-            decimal: ','
-        },
-        ca: {
-            y: (c: any) => { return 'any' + (c !== 1 ? 's' : ''); },
-            mo: (c: any) => { return 'mes' + (c !== 1 ? 'os' : ''); },
-            w: (c: any) => { return 'setman' + (c !== 1 ? 'es' : 'a'); },
-            d: (c: any) => { return 'di' + (c !== 1 ? 'es' : 'a'); },
-            h: (c: any) => { return 'hor' + (c !== 1 ? 'es' : 'a'); },
-            m: (c: any) => { return 'minut' + (c !== 1 ? 's' : ''); },
-            s: (c: any) => { return 'segon' + (c !== 1 ? 's' : ''); },
-            ms: (c: any) => { return 'milisegon' + (c !== 1 ? 's' : ''); },
-            decimal: ','
-        },
-        cs: {
-            y: (c: any) => { return ['rok', 'roku', 'roky', 'let'][this.getCzechForm(c)]; },
-            mo: (c: any) => { return ['měsíc', 'měsíce', 'měsíce', 'měsíců'][this.getCzechForm(c)]; },
-            w: (c: any) => { return ['týden', 'týdne', 'týdny', 'týdnů'][this.getCzechForm(c)]; },
-            d: (c: any) => { return ['den', 'dne', 'dny', 'dní'][this.getCzechForm(c)]; },
-            h: (c: any) => { return ['hodina', 'hodiny', 'hodiny', 'hodin'][this.getCzechForm(c)]; },
-            m: (c: any) => { return ['minuta', 'minuty', 'minuty', 'minut'][this.getCzechForm(c)]; },
-            s: (c: any) => { return ['sekunda', 'sekundy', 'sekundy', 'sekund'][this.getCzechForm(c)]; },
-            ms: (c: any) => { return ['milisekunda', 'milisekundy', 'milisekundy', 'milisekund'][this.getCzechForm(c)]; },
-            decimal: ','
-        },
-        da: {
-            y: 'år',
-            mo: (c: any) => { return 'måned' + (c !== 1 ? 'er' : ''); },
-            w: (c: any) => { return 'uge' + (c !== 1 ? 'r' : ''); },
-            d: (c: any) => { return 'dag' + (c !== 1 ? 'e' : ''); },
-            h: (c: any) => { return 'time' + (c !== 1 ? 'r' : ''); },
-            m: (c: any) => { return 'minut' + (c !== 1 ? 'ter' : ''); },
-            s: (c: any) => { return 'sekund' + (c !== 1 ? 'er' : ''); },
-            ms: (c: any) => { return 'millisekund' + (c !== 1 ? 'er' : ''); },
-            decimal: ','
-        },
-        de: {
-            y: (c: any) => { return 'Jahr' + (c !== 1 ? 'e' : ''); },
-            mo: (c: any) => { return 'Monat' + (c !== 1 ? 'e' : ''); },
-            w: (c: any) => { return 'Woche' + (c !== 1 ? 'n' : ''); },
-            d: (c: any) => { return 'Tag' + (c !== 1 ? 'e' : ''); },
-            h: (c: any) => { return 'Stunde' + (c !== 1 ? 'n' : ''); },
-            m: (c: any) => { return 'Minute' + (c !== 1 ? 'n' : ''); },
-            s: (c: any) => { return 'Sekunde' + (c !== 1 ? 'n' : ''); },
-            ms: (c: any) => { return 'Millisekunde' + (c !== 1 ? 'n' : ''); },
-            decimal: ','
-        },
-        en: {
-            y: (c: any) => { return 'year' + (c !== 1 ? 's' : ''); },
-            mo: (c: any) => { return 'month' + (c !== 1 ? 's' : ''); },
-            w: (c: any) => { return 'week' + (c !== 1 ? 's' : ''); },
-            d: (c: any) => { return 'day' + (c !== 1 ? 's' : ''); },
-            h: (c: any) => { return 'hour' + (c !== 1 ? 's' : ''); },
-            m: (c: any) => { return 'minute' + (c !== 1 ? 's' : ''); },
-            s: (c: any) => { return 'second' + (c !== 1 ? 's' : ''); },
-            ms: (c: any) => { return 'millisecond' + (c !== 1 ? 's' : ''); },
-            decimal: '.'
-        },
         es: {
             y: (c: any) => { return 'año' + (c !== 1 ? 's' : ''); },
             mo: (c: any) => { return 'mes' + (c !== 1 ? 'es' : ''); },
@@ -315,19 +249,6 @@ export class HumanizeDurationLanguage {
 
     addLanguage(key: string, lang: ILanguage) {
         this.languages[key] = lang;
-    }
-
-    // Internal helper function for Czech language.
-    getCzechForm(c: any) {
-        if (c === 1) {
-            return 0;
-        } else if (Math.floor(c) !== c) {
-            return 1;
-        } else if (c % 10 >= 2 && c % 10 <= 4 && c % 100 < 10) {
-            return 2;
-        } else {
-            return 3;
-        }
     }
 
     // Internal helper function for Polish language.
