@@ -5,17 +5,15 @@
         "target": "es5",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "inlineSourceMap": true,
-        "inlineSources": true,
         "declaration": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "outDir": "./dist"
     },
-    "files": [
-        "typings/main.d.ts",
-        "humanize-duration-ts.ts",
-        "./src/humanize-duration.interface.ts",
-        "./src/humanize-duration.lang.ts",
-        "./src/humanize-duration.ts",
-        "./tests/humanize-duration.spec.ts"
+    "include": [
+      "src/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      "tests"
     ]
 }

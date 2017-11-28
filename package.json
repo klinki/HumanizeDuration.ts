@@ -21,8 +21,8 @@
   "bugs": {
     "url": "https://github.com/Nightapes/HumanizeDuration.ts/issues"
   },
-  "main": "humanize-duration-ts.ts",
-  "typings": "./humanize-duration-ts.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/Nightapes/HumanizeDuration.ts",
   "devDependencies": {
     "@angular/core": "2.0.0-rc.4",
