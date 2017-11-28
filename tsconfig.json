@@ -7,10 +7,11 @@
         "experimentalDecorators": true,
         "declaration": true,
         "moduleResolution": "node",
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "noEmitOnError": true
     },
     "include": [
-      "src/**/*"
+      "src/index.ts"
     ],
     "exclude": [
       "node_modules",
