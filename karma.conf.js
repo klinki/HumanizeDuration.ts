@@ -9,42 +9,23 @@ module.exports = function(config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'karma-typescript'],
+
+        plugins: [
+          'karma-jasmine',
+          'karma-chrome-launcher',
+          'karma-typescript',
+          'karma-mocha-reporter'
+        ],
 
         // list of files / patterns to load in the browser
         files: [
-            // for Travis
-            'node_modules/es6-shim/es6-shim.js',
-            'node_modules/zone.js/dist/zone.js',
-            'node_modules/zone.js/dist/long-stack-trace-zone.js',
-            'node_modules/zone.js/dist/jasmine-patch.js',
-            'node_modules/systemjs/dist/system.src.js',
-            'node_modules/reflect-metadata/Reflect.js',
-
-            { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false, served: true },
-            { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false, served: true },
-            { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false, served: true }, // PhantomJS2 (and possibly others) might require it
-
-            { pattern: 'humanize-duration.ts', included: false, watched: true }, // source files
-            { pattern: 'src/**/*.ts', included: false, watched: true }, // source files
-            { pattern: 'tests/**/*.ts', included: false, watched: true }, // test files
-            'karma-test-shim.js'
-        ],
-
-        // list of files to exclude
-        exclude: [
-            'node_modules/@angular/**/*_spec.js'
+            'src/**/*.ts',
+            'tests/**/*.spec.ts' // test files
         ],
 
         preprocessors: {
-            '**/*.ts': ['typescript']
-        },
-
-        typescriptPreprocessor: {
-            options: require('./tsconfig.json').compilerOptions,
-            typings: [
-                "typings/main.d.ts"
-            ]
+            '**/*.ts': ['karma-typescript']
         },
 
         // test results reporter to use
