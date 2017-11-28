@@ -1,4 +1,7 @@
-export let languages = {
+import {ILanguageItem} from '../humanize-duration.interface';
+import {LANGUAGES} from '../humanize-duration.lang';
+
+export let languages: ILanguageItem = {
   en: {
     y: (c: any) => { return 'year' + (c !== 1 ? 's' : ''); },
     mo: (c: any) => { return 'month' + (c !== 1 ? 's' : ''); },
@@ -11,3 +14,5 @@ export let languages = {
     decimal: '.'
   }
 };
+
+LANGUAGES.addLanguage('en', languages.en);

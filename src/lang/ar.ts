@@ -1,4 +1,5 @@
-import {ILanguageItem} from "../humanize-duration.interface";
+import {ILanguageItem} from '../humanize-duration.interface';
+import {LANGUAGES} from '../humanize-duration.lang';
 
 export let languages: ILanguageItem = {
   ar: {
@@ -13,3 +14,5 @@ export let languages: ILanguageItem = {
     decimal: ','
   }
 };
+
+LANGUAGES.addLanguage('ar', languages.ar);

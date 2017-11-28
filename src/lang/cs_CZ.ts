@@ -1,4 +1,7 @@
-export let languages = {
+import {ILanguageItem} from '../humanize-duration.interface';
+import {LANGUAGES} from '../humanize-duration.lang';
+
+export let languages: ILanguageItem = {
   cs: {
     y: (c: any) => { return ['rok', 'roku', 'roky', 'let'][getCzechForm(c)]; },
     mo: (c: any) => { return ['měsíc', 'měsíce', 'měsíce', 'měsíců'][getCzechForm(c)]; },
@@ -24,3 +27,5 @@ function getCzechForm(c: number) {
     return 3;
   }
 }
+
+LANGUAGES.addLanguage('cs', languages.cs);
