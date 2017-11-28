@@ -1,5 +1,6 @@
 import {IHumanizeDurationOptions, ILanguage} from './humanize-duration.interface';
-import {HumanizeDurationLanguage} from './humanize-duration.lang';
+import {HumanizeDurationLanguage, LANGUAGES} from './humanize-duration.lang';
+import './lang/en';
 
 export class HumanizeDuration {
 
@@ -28,7 +29,11 @@ export class HumanizeDuration {
 
     private options: IHumanizeDurationOptions = undefined;
 
-    constructor(private languageUtil: HumanizeDurationLanguage) {
+    constructor(private languageUtil?: HumanizeDurationLanguage) {
+        if (this.languageUtil === undefined) {
+            this.languageUtil = LANGUAGES;
+        }
+
         this.options = this.defaultOptions;
     }
 
