@@ -15,17 +15,7 @@ export interface IHumanizeDurationOptions {
 };
 
 export interface ILanguageItem {
-    [key: string]: {
-        y: any;
-        mo: any;
-        w: any;
-        d: any;
-        h: any;
-        m: any;
-        s: any;
-        ms: any;
-        decimal: string
-    };
+    [key: string]: ILanguage;
 };
 
 export interface ILanguage {
