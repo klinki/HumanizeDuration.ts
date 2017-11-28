@@ -15,4 +15,4 @@ export let languages: ILanguageItem = {
   }
 };
 
-LANGUAGES.addLanguage('ms', languages.ms);
+LANGUAGES.addLanguage('ms', languages['ms']);

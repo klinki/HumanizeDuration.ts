@@ -30,4 +30,4 @@ function getSlavicForm(c: any) {
   }
 }
 
-LANGUAGES.addLanguage('uk', languages.uk);
+LANGUAGES.addLanguage('uk', languages['uk']);

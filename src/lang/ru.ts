@@ -30,4 +30,4 @@ function getSlavicForm(c: any) {
   }
 }
 
-LANGUAGES.addLanguage('ru', languages.ru);
+LANGUAGES.addLanguage('ru', languages['ru']);

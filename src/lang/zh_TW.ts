@@ -15,4 +15,4 @@ export let languages: ILanguageItem = {
   }
 };
 
-LANGUAGES.addLanguage('zh_TW', languages.zh_TW);
+LANGUAGES.addLanguage('zh_TW', languages['zh_TW']);

@@ -26,4 +26,4 @@ function getLithuanianForm(c: any) {
   }
 }
 
-LANGUAGES.addLanguage('lt', languages.lt);
+LANGUAGES.addLanguage('lt', languages['lt']);

@@ -28,4 +28,4 @@ function getPolishForm(c: any) {
   }
 }
 
-LANGUAGES.addLanguage('pl', languages.pl);
+LANGUAGES.addLanguage('pl', languages['pl']);

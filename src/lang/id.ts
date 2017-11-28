@@ -15,4 +15,4 @@ export let languages: ILanguageItem = {
   }
 };
 
-LANGUAGES.addLanguage('id', languages.id);
+LANGUAGES.addLanguage('id', languages['id']);

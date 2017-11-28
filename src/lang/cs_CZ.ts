@@ -28,4 +28,4 @@ function getCzechForm(c: number) {
   }
 }
 
-LANGUAGES.addLanguage('cs', languages.cs);
+LANGUAGES.addLanguage('cs', languages['cs']);
