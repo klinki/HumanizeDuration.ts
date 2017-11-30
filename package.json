@@ -1,5 +1,5 @@
 {
-  "name": "humanize-duration-ts",
+  "name": "@windup/humanize-duration-ts",
   "description": "An implementation of Humanize Duration in typescript",
   "scripts": {
     "test": "karma start",
@@ -10,20 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nightapes/HumanizeDuration.ts.git"
+    "url": "https://github.com/klinki/HumanizeDuration.ts.git"
   },
   "keywords": [
     "humanize-duration",
     "typescript"
   ],
-  "author": "Sebastian Beisch",
+  "author": "David Klingenberg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Nightapes/HumanizeDuration.ts/issues"
+    "url": "https://github.com/klinki/HumanizeDuration.ts/issues"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/Nightapes/HumanizeDuration.ts",
+  "homepage": "https://github.com/klinki/HumanizeDuration.ts",
   "devDependencies": {
     "@types/jasmine": "^2.8.2",
     "commitizen": "^2.9.6",
